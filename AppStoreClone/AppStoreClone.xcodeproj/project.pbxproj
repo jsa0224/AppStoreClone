@@ -53,6 +53,7 @@
 		AE2662D72BA96326002B82A0 /* AppStoreClone */ = {
 			isa = PBXGroup;
 			children = (
+				AE2662E92BA96C77002B82A0 /* Entity */,
 				AE2662D82BA96326002B82A0 /* AppStoreCloneApp.swift */,
 				AE2662DA2BA96326002B82A0 /* ContentView.swift */,
 				AE2662DC2BA96327002B82A0 /* Assets.xcassets */,
@@ -67,6 +68,14 @@
 				AE2662DF2BA96327002B82A0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AE2662E92BA96C77002B82A0 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Entity;
+			path = "뚜샤쇼";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
