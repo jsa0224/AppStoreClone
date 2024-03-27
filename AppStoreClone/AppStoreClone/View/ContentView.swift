@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Text("Today Tab")
+            TodayView()
                 .tabItem {
                     Image("today")
                         .renderingMode(.template)
@@ -37,7 +37,6 @@ struct ContentView: View {
                         .renderingMode(.template)
                     Text("Arcade")
                 }
-                .badge(10)
 
             Text("Search Tab")
                 .tabItem {
