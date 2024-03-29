@@ -9,26 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Spacer()
-            Spacer()
-            Spacer()
-
-            VStack(alignment: .leading, spacing: 5) {
-                Text("시작하기")
-                    .font(.body)
-                    .bold()
-                    .foregroundColor(.white)
-                Text("소중한 사람들과" + "\n" + "콘텐츠에 더욱 가까이")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(.white)
-            }
-
-            AppView()
-            Spacer()
-        }
-        .background(
+        ZStack(alignment: .bottom) {
             ZStack(alignment: .bottom) {
                 Image("Instargram")
                     .resizable()
@@ -41,7 +22,24 @@ struct CardView: View {
                     .cornerRadius(15, corner: .bottomLeft)
                     .cornerRadius(15, corner: .bottomRight)
             }
-        )
+
+            VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 5) {
+                    Text("시작하기")
+                        .font(.body)
+                        .bold()
+                        .foregroundColor(.white)
+                    Text("소중한 사람들과" + "\n" + "콘텐츠에 더욱 가까이")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.white)
+                }
+
+                AppView()
+                    .padding([.bottom], 15)
+            }
+
+        }
     }
 }
 
