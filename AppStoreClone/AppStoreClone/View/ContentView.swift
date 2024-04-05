@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            TodayView()
+            TodayView(appItems: appItems)
                 .tabItem {
                     Image("today")
                         .renderingMode(.template)
@@ -41,7 +41,7 @@ struct ContentView: View {
             Text("Search Tab")
                 .tabItem {
                     Image(systemName: "magnifyingglass")
-                    Text("Games")
+                    Text("Search")
                 }
         }
     }
