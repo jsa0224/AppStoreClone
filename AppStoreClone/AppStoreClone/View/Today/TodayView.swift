@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TodayView: View {
     @State var showDetailView: Bool = false
-    @State var isTransition: Bool = false
     @State var isAnimationView: Bool = false
     @State var appItems: [AppItem]
     @State var currentItem: AppItem?
@@ -57,27 +56,15 @@ struct TodayView: View {
             }
         }
         .padding(.vertical)
-        .overlayIf (
-            showDetailView,
+        .overlay {
+            if showDetailView {
                 CardDetailView(showDetailView: showDetailView, isAnimationView: isAnimationView, currentItem: currentItem)
                     .edgesIgnoringSafeArea(.top)
-        )
+            }
+        }
     }
 }
 
 #Preview {
     TodayView(appItems: appItems)
-}
-
-extension View {
-  @ViewBuilder public func overlayIf<T: View>(
-    _ condition: Bool,
-    _ content: T
-  ) -> some View {
-    if condition {
-      self.overlay(content)
-    } else {
-      self
-    }
-  }
 }

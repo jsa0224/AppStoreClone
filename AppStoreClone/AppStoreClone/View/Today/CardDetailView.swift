@@ -15,9 +15,39 @@ struct CardDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                CardView(showDetailView: showDetailView, item: currentItem ?? AppItem(name: "", icon: Image(""), trunail: Image(""), description: ""))
+                CardView(showDetailView: showDetailView, item: currentItem ?? AppItem(name: "", icon: Image(""), trunail: Image(""), description: "", fullDescription: ""))
                     .scaleEffect(isAnimationView ? 1 : 0.90)
+
+                VStack(spacing: 15, content: {
+                    Text(currentItem?.fullDescription ?? "")
+                        .multilineTextAlignment(.leading)
+                        .lineSpacing(20)
+                        .padding(.top, 20)
+                        .padding(.bottom, 20)
+                        .padding(.horizontal, 25)
+
+                    Divider()
+
+                    Button {
+
+                    } label: {
+                        Label {
+                            Text("스토리 공유")
+                        } icon: {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                        .foregroundColor(.primary)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 25)
+                        .background {
+                            RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                .fill(.ultraThinMaterial)
+                        }
+                    }
+                    .padding(.bottom, 20)
+                })
             }
+            .background(.white)
             .overlay(alignment: .topTrailing, content: {
                 Button {
                     withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
@@ -44,23 +74,10 @@ struct CardDetailView: View {
             }
             .transition(.identity)
         }
+        .opacity(showDetailView ? 1 : 0)
     }
 }
 
 #Preview {
     CardDetailView(showDetailView: true, isAnimationView: true, currentItem: appItems[0])
-}
-
-extension View {
-    func safeArea() -> UIEdgeInsets {
-        guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
-            return .zero
-        }
-
-        guard let safeArea = screen.windows.first?.safeAreaInsets else {
-            return .zero
-        }
-
-        return safeArea
-    }
 }
