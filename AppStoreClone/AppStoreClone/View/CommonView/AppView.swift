@@ -17,10 +17,8 @@ struct AppView: View {
             VStack(alignment: .leading) {
                 Text("인스타그램")
                     .bold()
-                    .foregroundColor(.black)
                 Text("소중한 사람들과 콘텐츠에 더욱 가까이")
                     .font(.caption)
-                    .foregroundColor(.black)
             }
 
             Button {
@@ -29,7 +27,6 @@ struct AppView: View {
                 Text("받기")
                     .font(.headline)
                     .bold()
-                    .foregroundColor(.black)
                     .frame(width: 70, height: 30)
                     .background(.thinMaterial)
                     .cornerRadius(15)

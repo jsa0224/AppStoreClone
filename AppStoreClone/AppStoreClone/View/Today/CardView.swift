@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct CardView: View {
-    @State var showDetailView: Bool
-    @State var item: AppItem
+    @Bindable var store: StoreOf<Today>
+    @State var currentItem: AppItem?
     @Namespace var animation
 
     var body: some View {
@@ -21,10 +22,10 @@ struct CardView: View {
                     .scaledToFit()
                     .cornerRadius(15)
                 Text("")
-                    .frame(width: showDetailView ? 400 : 350, height: 75)
+                    .frame(width: store.showDetailView ? 400 : 350, height: 75)
                     .background(.thinMaterial)
-                    .cornerRadius(showDetailView ? 0 : 15, corner: .bottomLeft)
-                    .cornerRadius(showDetailView ? 0 : 15, corner: .bottomRight)
+                    .cornerRadius(store.showDetailView ? 0 : 15, corner: .bottomLeft)
+                    .cornerRadius(store.showDetailView ? 0 : 15, corner: .bottomRight)
             }
 
             VStack(alignment: .leading, spacing: 20) {
@@ -42,13 +43,8 @@ struct CardView: View {
                     .padding([.bottom], 15)
             }
         }
-        .matchedGeometryEffect(id: item.id, in: animation)
+        .matchedGeometryEffect(id: currentItem?.id, in: animation)
     }
-}
-
-
-#Preview {
-    CardView(showDetailView: true, item: appItems[0])
 }
 
 struct ScaledButtonStyle: ButtonStyle {

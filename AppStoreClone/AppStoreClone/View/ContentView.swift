@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
     var body: some View {
         TabView {
-            TodayView(appItems: appItems)
+            TodayView(store: Store(initialState: Today.State()) {
+                Today()
+                    ._printChanges()
+            })
                 .tabItem {
                     Image("today")
                         .renderingMode(.template)

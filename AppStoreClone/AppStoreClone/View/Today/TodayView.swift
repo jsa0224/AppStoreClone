@@ -6,11 +6,49 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+
+@Reducer
+struct Today {
+    @ObservableState
+    struct State: Equatable {
+        var showDetailView: Bool = false
+        var isAnimationView: Bool = false
+        var appItem: [AppItem] = appItems
+    }
+
+    enum Action {
+        case cardViewTapped
+        case cardDetailViewOnAppeared
+        case cardDetailViewDisappeared
+        case cardDetailViewCloseButtonTapped
+    }
+
+    var body: some Reducer<State, Action> {
+        Reduce { state, action in
+            switch action {
+            case .cardViewTapped:
+                state.showDetailView = true
+                return .none
+
+            case .cardDetailViewOnAppeared:
+                state.isAnimationView = true
+                return .none
+
+            case .cardDetailViewDisappeared:
+                state.isAnimationView = false
+                return .none
+
+            case .cardDetailViewCloseButtonTapped:
+                state.showDetailView = false
+                return .none
+            }
+        }
+    }
+}
 
 struct TodayView: View {
-    @State var showDetailView: Bool = false
-    @State var isAnimationView: Bool = false
-    @State var appItems: [AppItem]
+    @Bindable var store: StoreOf<Today>
     @State var currentItem: AppItem?
     @Namespace var animation
 
@@ -36,35 +74,31 @@ struct TodayView: View {
                 })
                 .padding(.horizontal)
                 .padding()
-                .opacity(isAnimationView ? 0 : 1)
+                .opacity(store.isAnimationView ? 0 : 1)
             })
 
-            ForEach(appItems) { item in
+            ForEach(store.appItem) { item in
                 Button {
                     withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
                         currentItem = item
-                        showDetailView.toggle()
+                        store.send(.cardViewTapped)
                     }
                 } label: {
-                    CardView(showDetailView: showDetailView, item: item, animation: _animation)
+                    CardView(store: store, currentItem: item)
                         .multilineTextAlignment(.leading)
                         .padding([.leading], 30)
                         .padding([.trailing], 30)
                 }
                 .buttonStyle(ScaledButtonStyle())
-                .opacity(showDetailView ? (currentItem?.id == item.id ? 1 : 0) : 1)
+                .opacity(store.showDetailView ? (currentItem?.id == item.id ? 1 : 0) : 1)
             }
         }
         .padding(.vertical)
         .overlay {
-            if showDetailView {
-                CardDetailView(showDetailView: showDetailView, isAnimationView: isAnimationView, currentItem: currentItem)
+            if store.showDetailView {
+                CardDetailView(store: store, currentItem: currentItem)
                     .edgesIgnoringSafeArea(.top)
             }
         }
     }
-}
-
-#Preview {
-    TodayView(appItems: appItems)
 }

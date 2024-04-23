@@ -6,17 +6,17 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct CardDetailView: View {
-    @State var showDetailView: Bool
-    @State var isAnimationView: Bool
+    @Bindable var store: StoreOf<Today>
     @State var currentItem: AppItem?
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                CardView(showDetailView: showDetailView, item: currentItem ?? AppItem(name: "", icon: Image(""), trunail: Image(""), description: "", fullDescription: ""))
-                    .scaleEffect(isAnimationView ? 1 : 0.90)
+                CardView(store: store)
+                    .scaleEffect(store.isAnimationView ? 1 : 0.90)
 
                 VStack(spacing: 15, content: {
                     Text(currentItem?.fullDescription ?? "")
@@ -24,6 +24,8 @@ struct CardDetailView: View {
                         .lineSpacing(20)
                         .padding(.top, 20)
                         .padding(.bottom, 20)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
                         .padding(.horizontal, 25)
 
                     Divider()
@@ -47,37 +49,28 @@ struct CardDetailView: View {
                     .padding(.bottom, 20)
                 })
             }
-            .background(.white)
+            .background(.background)
             .overlay(alignment: .topTrailing, content: {
                 Button {
-                    withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                        isAnimationView = false
-                    }
+                    store.send(.cardDetailViewDisappeared, animation: .interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7))
 
-                    withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7).delay(0.05)) {
-                        currentItem = nil
-                        showDetailView = false
-                    }
+                    store.send(.cardDetailViewCloseButtonTapped, animation: .interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7).delay(0.05))
+
+                    currentItem = nil
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .font(.title)
                         .foregroundStyle(.thinMaterial)
                 }
                 .padding([.top], 30)
-                .padding([.trailing], 30)
-                .opacity(isAnimationView ? 1 : 0)
+                .padding([.trailing], 50)
+                .opacity(store.isAnimationView ? 1 : 0)
             })
             .onAppear() {
-                withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                    isAnimationView = true
-                }
+                store.send(.cardDetailViewOnAppeared, animation: .interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7))
             }
             .transition(.identity)
         }
-        .opacity(showDetailView ? 1 : 0)
+        .opacity(store.showDetailView ? (currentItem == nil ? 0 : 1) : 0)
     }
-}
-
-#Preview {
-    CardDetailView(showDetailView: true, isAnimationView: true, currentItem: appItems[0])
 }
