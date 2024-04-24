@@ -16,7 +16,7 @@ struct CardView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .bottom) {
-                Image("Instargram")
+                currentItem?.trunail
                     .resizable()
                     .frame(height: 450)
                     .scaledToFit()
@@ -28,7 +28,7 @@ struct CardView: View {
                     .cornerRadius(store.showDetailView ? 0 : 15, corner: .bottomRight)
             }
 
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading) {
                 VStack(alignment: .leading ,spacing: 5) {
                     Text("시작하기")
                         .bold()
@@ -38,9 +38,11 @@ struct CardView: View {
                         .bold()
                         .foregroundColor(.white)
                 }
+                .padding()
 
-                AppView()
-                    .padding([.bottom], 15)
+                AppView(currentItem: currentItem)
+                    .padding([.trailing], 20)
+                    .padding([.leading], 20)
             }
         }
         .matchedGeometryEffect(id: currentItem?.id, in: animation)
@@ -53,4 +55,11 @@ struct ScaledButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.90 : 1)
             .animation(.easeInOut, value: configuration.isPressed)
     }
+}
+
+#Preview {
+    CardView(store: Store(initialState: Today.State()) {
+        Today()
+            ._printChanges()
+    }, currentItem: AppItem(name: "고양이 스낵바", icon: Image("고양이 스낵바 로고"), trunail: Image("고양이 스낵바 이미지"), description: "귀여운 고양이들과 음식을 만들어보세요!", fullDescription: ""))
 }

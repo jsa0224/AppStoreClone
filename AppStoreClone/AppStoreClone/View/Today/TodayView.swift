@@ -102,3 +102,10 @@ struct TodayView: View {
         }
     }
 }
+
+#Preview {
+    TodayView(store: Store(initialState: Today.State()) {
+        Today()
+            ._printChanges()
+    })
+}

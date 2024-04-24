@@ -15,7 +15,7 @@ struct CardDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                CardView(store: store)
+                CardView(store: store, currentItem: currentItem)
                     .scaleEffect(store.isAnimationView ? 1 : 0.90)
 
                 VStack(spacing: 15, content: {
@@ -73,4 +73,11 @@ struct CardDetailView: View {
         }
         .opacity(store.showDetailView ? (currentItem == nil ? 0 : 1) : 0)
     }
+}
+
+#Preview {
+    CardDetailView(store: Store(initialState: Today.State()) {
+        Today()
+            ._printChanges()
+    }, currentItem: AppItem(name: "고양이 스낵바", icon: Image("고양이 스낵바 로고"), trunail: Image("고양이 스낵바 이미지"), description: "귀여운 고양이들과 음식을 만들어보세요!", fullDescription: ""))
 }

@@ -8,18 +8,27 @@
 import SwiftUI
 
 struct AppView: View {
+    @State var currentItem: AppItem?
+
     var body: some View {
         HStack {
-            Image("InstagramLogo")
-                .resizable()
-                .frame(width: 50, height: 50)
+            HStack{
+                currentItem?.icon
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .cornerRadius(10, corner: .allCorners)
 
-            VStack(alignment: .leading) {
-                Text("인스타그램")
-                    .bold()
-                Text("소중한 사람들과 콘텐츠에 더욱 가까이")
-                    .font(.caption)
+                VStack(alignment: .leading) {
+                    Text(currentItem?.name ?? "")
+                        .bold()
+                    Text(currentItem?.description ?? "")
+                        .font(.caption)
+                        .lineLimit(1)
+                }
             }
+            .padding()
+
+            Spacer()
 
             Button {
 
@@ -31,10 +40,11 @@ struct AppView: View {
                     .background(.thinMaterial)
                     .cornerRadius(15)
             }
+            .padding()
         }
     }
 }
 
 #Preview {
-    AppView()
+    AppView(currentItem: AppItem(name: "고양이 스낵바", icon: Image("고양이 스낵바 로고"), trunail: Image("고양이 스낵바 이미지"), description: "귀여운 고양이들과 음식을 만들어보세요!", fullDescription: ""))
 }
