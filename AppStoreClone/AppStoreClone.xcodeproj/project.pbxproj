@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE260A5C2BDB7C3600481DFD /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE260A5B2BDB7C3600481DFD /* GifImage.swift */; };
+		AE260A5E2BDB7DB600481DFD /* 쿠키런 광고 영상.gif in Resources */ = {isa = PBXBuildFile; fileRef = AE260A5D2BDB7DB600481DFD /* 쿠키런 광고 영상.gif */; };
+		AE260A622BDB7E8C00481DFD /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE260A612BDB7E8C00481DFD /* AdView.swift */; };
 		AE2662D92BA96326002B82A0 /* AppStoreCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662D82BA96326002B82A0 /* AppStoreCloneApp.swift */; };
 		AE2662DB2BA96326002B82A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662DA2BA96326002B82A0 /* ContentView.swift */; };
 		AE2662DD2BA96327002B82A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE2662DC2BA96327002B82A0 /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE260A5B2BDB7C3600481DFD /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		AE260A5D2BDB7DB600481DFD /* 쿠키런 광고 영상.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "쿠키런 광고 영상.gif"; sourceTree = "<group>"; };
+		AE260A612BDB7E8C00481DFD /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
 		AE2662D52BA96326002B82A0 /* AppStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2662D82BA96326002B82A0 /* AppStoreCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreCloneApp.swift; sourceTree = "<group>"; };
 		AE2662DA2BA96326002B82A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +54,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE260A5F2BDB7E4100481DFD /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				AE2662F82BB3E895002B82A0 /* CardView.swift */,
+				AE72D4322BBFDA69008B0FCB /* CardDetailView.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		AE260A602BDB7E7500481DFD /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				AE260A612BDB7E8C00481DFD /* AdView.swift */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
 		AE2662CC2BA96326002B82A0 = {
 			isa = PBXGroup;
 			children = (
@@ -108,8 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				AE2662EE2BAADCCF002B82A0 /* TodayView.swift */,
-				AE2662F82BB3E895002B82A0 /* CardView.swift */,
-				AE72D4322BBFDA69008B0FCB /* CardDetailView.swift */,
+				AE260A5F2BDB7E4100481DFD /* Card */,
+				AE260A602BDB7E7500481DFD /* Ad */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -126,7 +149,9 @@
 		AE2662FF2BB3FC0B002B82A0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				AE260A5D2BDB7DB600481DFD /* 쿠키런 광고 영상.gif */,
 				AE2663002BB3FC27002B82A0 /* View.swift */,
+				AE260A5B2BDB7C3600481DFD /* GifImage.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -195,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE260A5E2BDB7DB600481DFD /* 쿠키런 광고 영상.gif in Resources */,
 				AE2662E02BA96327002B82A0 /* Preview Assets.xcassets in Resources */,
 				AE2662DD2BA96327002B82A0 /* Assets.xcassets in Resources */,
 			);
@@ -211,10 +237,12 @@
 				AE2662FE2BB3FB20002B82A0 /* RoundedCorner.swift in Sources */,
 				AE72D4312BBFC9EB008B0FCB /* AppItem.swift in Sources */,
 				AE2662DB2BA96326002B82A0 /* ContentView.swift in Sources */,
+				AE260A5C2BDB7C3600481DFD /* GifImage.swift in Sources */,
 				AE2663012BB3FC27002B82A0 /* View.swift in Sources */,
 				AE2662EF2BAADCCF002B82A0 /* TodayView.swift in Sources */,
 				AE2662F92BB3E895002B82A0 /* CardView.swift in Sources */,
 				AE2662FC2BB3F537002B82A0 /* AppView.swift in Sources */,
+				AE260A622BDB7E8C00481DFD /* AdView.swift in Sources */,
 				AE2662D92BA96326002B82A0 /* AppStoreCloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

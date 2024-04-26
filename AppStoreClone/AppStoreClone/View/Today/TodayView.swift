@@ -92,6 +92,10 @@ struct TodayView: View {
                 .buttonStyle(ScaledButtonStyle())
                 .opacity(store.showDetailView ? (currentItem?.id == item.id ? 1 : 0) : 1)
             }
+
+            AdView()
+                .padding([.leading], 30)
+                .padding([.trailing], 30)
         }
         .padding(.vertical)
         .overlay {
