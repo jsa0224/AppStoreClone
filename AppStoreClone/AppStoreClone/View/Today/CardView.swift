@@ -30,19 +30,18 @@ struct CardView: View {
 
             VStack(alignment: .leading) {
                 VStack(alignment: .leading ,spacing: 5) {
-                    Text("시작하기")
+                    Text(currentItem?.adsTitle ?? "")
                         .bold()
                         .foregroundColor(.white)
-                    Text("콘텐츠에 더욱 가까이")
+                    Text(currentItem?.adsDescription ?? "")
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(.white)
                 }
-                .padding()
+                .padding([.leading], 10)
 
                 AppView(currentItem: currentItem)
-                    .padding([.trailing], 20)
-                    .padding([.leading], 20)
+                    .padding([.bottom], 15)
             }
         }
         .matchedGeometryEffect(id: currentItem?.id, in: animation)
@@ -61,5 +60,11 @@ struct ScaledButtonStyle: ButtonStyle {
     CardView(store: Store(initialState: Today.State()) {
         Today()
             ._printChanges()
-    }, currentItem: AppItem(name: "고양이 스낵바", icon: Image("고양이 스낵바 로고"), trunail: Image("고양이 스낵바 이미지"), description: "귀여운 고양이들과 음식을 만들어보세요!", fullDescription: ""))
+    }, currentItem: AppItem(name: "고양이 스낵바",
+                            icon: Image("고양이 스낵바 로고"),
+                            trunail: Image("고양이 스낵바 이미지"),
+                            adsTitle: "최초 공개",
+                            adsDescription: "고양이들과 요리를!",
+                            description: "귀여운 고양이들과 음식을 만들어보세요!",
+                            fullDescription: ""))
 }

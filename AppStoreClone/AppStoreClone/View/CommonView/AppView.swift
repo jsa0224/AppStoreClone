@@ -26,9 +26,7 @@ struct AppView: View {
                         .lineLimit(1)
                 }
             }
-            .padding()
-
-            Spacer()
+            .padding([.trailing], 20)
 
             Button {
 
@@ -40,8 +38,9 @@ struct AppView: View {
                     .background(.thinMaterial)
                     .cornerRadius(15)
             }
-            .padding()
         }
+        .padding([.leading], 10)
+        .padding([.trailing], 10)
     }
 }
 
