@@ -58,7 +58,8 @@ struct TodayView: View {
                 HStack(alignment: .top, content: {
                     HStack(alignment: .bottom, spacing: 8, content: {
                         Text("투데이")
-                            .font(.title.bold())
+                            .font(.largeTitle)
+                            .bold()
 
                         Text("4월 5일")
                             .font(.title3.bold())
@@ -73,7 +74,8 @@ struct TodayView: View {
                         .clipShape(Circle())
                 })
                 .padding(.horizontal)
-                .padding()
+                .padding([.leading], 30)
+                .padding([.trailing], 30)
                 .opacity(store.isAnimationView ? 0 : 1)
             })
 
@@ -92,12 +94,21 @@ struct TodayView: View {
                 .buttonStyle(ScaledButtonStyle())
                 .opacity(store.showDetailView ? (currentItem?.id == item.id ? 1 : 0) : 1)
             }
+            .padding()
 
             AdView()
                 .padding([.leading], 30)
                 .padding([.trailing], 30)
+                .padding()
+
+            TodayListView(store: store)
+                .frame(height: 250)
+                .padding([.leading], 30)
+                .padding([.trailing], 30)
+                .padding()
         }
         .padding(.vertical)
+        .background(.thickMaterial)
         .overlay {
             if store.showDetailView {
                 CardDetailView(store: store, currentItem: currentItem)
