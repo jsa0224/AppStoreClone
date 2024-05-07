@@ -12,7 +12,7 @@ struct AppView: View {
 
     var body: some View {
         HStack {
-            HStack{
+            HStack {
                 currentItem?.icon
                     .resizable()
                     .frame(width: 50, height: 50)
@@ -28,6 +28,8 @@ struct AppView: View {
             }
             .padding([.trailing], 20)
 
+            Spacer()
+
             Button {
 
             } label: {
@@ -39,11 +41,19 @@ struct AppView: View {
                     .cornerRadius(15)
             }
         }
-        .padding([.leading], 10)
-        .padding([.trailing], 10)
+        .padding([.leading], 30)
+        .padding([.trailing], 30)
     }
 }
 
 #Preview {
     AppView(currentItem: AppItem(name: "고양이 스낵바", icon: Image("고양이 스낵바 로고"), trunail: Image("고양이 스낵바 이미지"), description: "귀여운 고양이들과 음식을 만들어보세요!", fullDescription: ""))
+}
+
+#Preview {
+    AppView(currentItem: AppItem(name: "헬로키티 스윗파티",
+                                 icon: Image("헬로키티 스윗파티 로고"),
+                                 trunail: Image(""),
+                                 description: "산리오 공식 패션 꾸미기!",
+                                 fullDescription: ""))
 }

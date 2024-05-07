@@ -14,7 +14,8 @@ struct Today {
     struct State: Equatable {
         var showDetailView: Bool = false
         var isAnimationView: Bool = false
-        var appItem: [AppItem] = appItems
+        var appCardItem: [AppItem] = appCardItems
+        var appListItem: [AppItem] = appListItems
     }
 
     enum Action {
@@ -79,21 +80,19 @@ struct TodayView: View {
                 .opacity(store.isAnimationView ? 0 : 1)
             })
 
-            ForEach(store.appItem) { item in
-                Button {
-                    withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                        currentItem = item
-                        store.send(.cardViewTapped)
-                    }
-                } label: {
-                    CardView(store: store, currentItem: item)
-                        .multilineTextAlignment(.leading)
-                        .padding([.leading], 30)
-                        .padding([.trailing], 30)
+            Button {
+                withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+                    currentItem = store.appCardItem[0]
+                    store.send(.cardViewTapped)
                 }
-                .buttonStyle(ScaledButtonStyle())
-                .opacity(store.showDetailView ? (currentItem?.id == item.id ? 1 : 0) : 1)
+            } label: {
+                CardView(store: store, currentItem: store.appCardItem[0])
+                    .multilineTextAlignment(.leading)
+                    .padding([.leading], 30)
+                    .padding([.trailing], 30)
             }
+            .buttonStyle(ScaledButtonStyle())
+            .opacity(store.showDetailView ? (currentItem?.id == store.appCardItem[0].id ? 1 : 0) : 1)
             .padding()
 
             AdView()
@@ -102,10 +101,25 @@ struct TodayView: View {
                 .padding()
 
             TodayListView(store: store)
-                .frame(height: 250)
+                .frame(height: 480)
                 .padding([.leading], 30)
                 .padding([.trailing], 30)
                 .padding()
+
+            Button {
+                withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+                    currentItem = store.appCardItem[1]
+                    store.send(.cardViewTapped)
+                }
+            } label: {
+                CardView(store: store, currentItem: store.appCardItem[1])
+                    .multilineTextAlignment(.leading)
+                    .padding([.leading], 30)
+                    .padding([.trailing], 30)
+            }
+            .buttonStyle(ScaledButtonStyle())
+            .opacity(store.showDetailView ? (currentItem?.id == store.appCardItem[1].id ? 1 : 0) : 1)
+            .padding()
         }
         .padding(.vertical)
         .background(.thickMaterial)

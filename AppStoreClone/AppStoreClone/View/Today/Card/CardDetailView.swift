@@ -17,6 +17,8 @@ struct CardDetailView: View {
             VStack {
                 CardView(store: store, currentItem: currentItem)
                     .scaleEffect(store.isAnimationView ? 1 : 0.90)
+                    .padding(.leading, 50)
+                    .padding(.trailing, 50)
 
                 VStack(spacing: 15, content: {
                     Text(currentItem?.fullDescription ?? "")
@@ -24,8 +26,8 @@ struct CardDetailView: View {
                         .lineSpacing(20)
                         .padding(.top, 20)
                         .padding(.bottom, 20)
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
+                        .padding(.leading, 50)
+                        .padding(.trailing, 50)
                         .padding(.horizontal, 25)
 
                     Divider()
@@ -63,7 +65,7 @@ struct CardDetailView: View {
                         .foregroundStyle(.thinMaterial)
                 }
                 .padding([.top], 30)
-                .padding([.trailing], 50)
+                .padding([.trailing], 80)
                 .opacity(store.isAnimationView ? 1 : 0)
             })
             .onAppear() {

@@ -24,11 +24,10 @@ struct TodayListView: View {
             }
             .padding([.top])
 
-            ForEach(store.appItem) { item in
+            ForEach(store.appListItem) { item in
                 AppView(currentItem: item)
                     .frame(width: 350)
                     .listRowSeparator(.hidden)
-
             }
         }
         .listStyle(.inset)
