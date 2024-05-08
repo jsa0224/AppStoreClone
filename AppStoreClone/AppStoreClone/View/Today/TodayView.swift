@@ -86,7 +86,7 @@ struct TodayView: View {
                     store.send(.cardViewTapped)
                 }
             } label: {
-                CardView(store: store, currentItem: store.appCardItem[0])
+                TodayCardView(store: store, currentItem: store.appCardItem[0])
                     .multilineTextAlignment(.leading)
                     .padding([.leading], 30)
                     .padding([.trailing], 30)
@@ -112,7 +112,7 @@ struct TodayView: View {
                     store.send(.cardViewTapped)
                 }
             } label: {
-                CardView(store: store, currentItem: store.appCardItem[1])
+                TodayCardView(store: store, currentItem: store.appCardItem[1])
                     .multilineTextAlignment(.leading)
                     .padding([.leading], 30)
                     .padding([.trailing], 30)

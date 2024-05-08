@@ -62,3 +62,21 @@ var appListItems: [AppItem] = [
             description: "Relaxing Kawaii Music Cat",
             fullDescription: "")
 ]
+
+var appGamesCardItems: [AppItem] = [
+    AppItem(name: "놀러와 마이홈",
+            icon: Image("놀러와 마이홈 로고"),
+            trunail: Image("놀러와 마이홈 이미지"),
+            description: "너랑 나랑 만드는 달콤한 나의 집!",
+            fullDescription: ""),
+    AppItem(name: "놀러와 마이홈",
+            icon: Image("놀러와 마이홈 로고"),
+            trunail: Image("놀러와 마이홈 이미지"),
+            description: "너랑 나랑 만드는 달콤한 나의 집!",
+            fullDescription: ""),
+    AppItem(name: "놀러와 마이홈",
+            icon: Image("놀러와 마이홈 로고"),
+            trunail: Image("놀러와 마이홈 이미지"),
+            description: "너랑 나랑 만드는 달콤한 나의 집!",
+            fullDescription: "")
+]

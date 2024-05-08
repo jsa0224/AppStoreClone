@@ -21,8 +21,10 @@ struct AppView: View {
                 VStack(alignment: .leading) {
                     Text(currentItem?.name ?? "")
                         .bold()
+                        .foregroundStyle(.black)
                     Text(currentItem?.description ?? "")
                         .font(.caption)
+                        .foregroundStyle(.black)
                         .lineLimit(1)
                 }
             }

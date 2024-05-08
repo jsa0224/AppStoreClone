@@ -16,13 +16,15 @@
 		AE2662E02BA96327002B82A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE2662DF2BA96327002B82A0 /* Preview Assets.xcassets */; };
 		AE2662E82BA963BC002B82A0 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = AE2662E72BA963BC002B82A0 /* ComposableArchitecture */; };
 		AE2662EF2BAADCCF002B82A0 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662EE2BAADCCF002B82A0 /* TodayView.swift */; };
-		AE2662F92BB3E895002B82A0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662F82BB3E895002B82A0 /* CardView.swift */; };
+		AE2662F92BB3E895002B82A0 /* TodayCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662F82BB3E895002B82A0 /* TodayCardView.swift */; };
 		AE2662FC2BB3F537002B82A0 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662FB2BB3F537002B82A0 /* AppView.swift */; };
 		AE2662FE2BB3FB20002B82A0 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2662FD2BB3FB20002B82A0 /* RoundedCorner.swift */; };
 		AE2663012BB3FC27002B82A0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2663002BB3FC27002B82A0 /* View.swift */; };
 		AE43C4622BE2657100B1FAD2 /* TodayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43C4612BE2657100B1FAD2 /* TodayListView.swift */; };
 		AE72D4312BBFC9EB008B0FCB /* AppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72D4302BBFC9EB008B0FCB /* AppItem.swift */; };
 		AE72D4332BBFDA69008B0FCB /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72D4322BBFDA69008B0FCB /* CardDetailView.swift */; };
+		AED6A7002BEBACFD00510619 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED6A6FF2BEBACFD00510619 /* GameCardView.swift */; };
+		AED6A7022BEBAE5700510619 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED6A7012BEBAE5700510619 /* GamesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +37,15 @@
 		AE2662DC2BA96327002B82A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE2662DF2BA96327002B82A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE2662EE2BAADCCF002B82A0 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
-		AE2662F82BB3E895002B82A0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		AE2662F82BB3E895002B82A0 /* TodayCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCardView.swift; sourceTree = "<group>"; };
 		AE2662FB2BB3F537002B82A0 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		AE2662FD2BB3FB20002B82A0 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		AE2663002BB3FC27002B82A0 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		AE43C4612BE2657100B1FAD2 /* TodayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayListView.swift; sourceTree = "<group>"; };
 		AE72D4302BBFC9EB008B0FCB /* AppItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppItem.swift; sourceTree = "<group>"; };
 		AE72D4322BBFDA69008B0FCB /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		AED6A6FF2BEBACFD00510619 /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
+		AED6A7012BEBAE5700510619 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,7 @@
 		AE260A5F2BDB7E4100481DFD /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				AE2662F82BB3E895002B82A0 /* CardView.swift */,
+				AE2662F82BB3E895002B82A0 /* TodayCardView.swift */,
 				AE72D4322BBFDA69008B0FCB /* CardDetailView.swift */,
 			);
 			path = Card;
@@ -125,6 +129,7 @@
 				AE2662DA2BA96326002B82A0 /* ContentView.swift */,
 				AE2662FA2BB3F522002B82A0 /* CommonView */,
 				AE2662ED2BAADC9E002B82A0 /* Today */,
+				AED6A6FE2BEBACB500510619 /* Games */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +170,23 @@
 				AE43C4612BE2657100B1FAD2 /* TodayListView.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		AED6A6FE2BEBACB500510619 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				AED6A7012BEBAE5700510619 /* GamesView.swift */,
+				AED6A7032BEBAE5E00510619 /* Card */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		AED6A7032BEBAE5E00510619 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				AED6A6FF2BEBACFD00510619 /* GameCardView.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,12 +268,14 @@
 			files = (
 				AE72D4332BBFDA69008B0FCB /* CardDetailView.swift in Sources */,
 				AE2662FE2BB3FB20002B82A0 /* RoundedCorner.swift in Sources */,
+				AED6A7022BEBAE5700510619 /* GamesView.swift in Sources */,
+				AED6A7002BEBACFD00510619 /* GameCardView.swift in Sources */,
 				AE72D4312BBFC9EB008B0FCB /* AppItem.swift in Sources */,
 				AE2662DB2BA96326002B82A0 /* ContentView.swift in Sources */,
 				AE260A5C2BDB7C3600481DFD /* GifImage.swift in Sources */,
 				AE2663012BB3FC27002B82A0 /* View.swift in Sources */,
 				AE2662EF2BAADCCF002B82A0 /* TodayView.swift in Sources */,
-				AE2662F92BB3E895002B82A0 /* CardView.swift in Sources */,
+				AE2662F92BB3E895002B82A0 /* TodayCardView.swift in Sources */,
 				AE43C4622BE2657100B1FAD2 /* TodayListView.swift in Sources */,
 				AE2662FC2BB3F537002B82A0 /* AppView.swift in Sources */,
 				AE260A622BDB7E8C00481DFD /* AdView.swift in Sources */,

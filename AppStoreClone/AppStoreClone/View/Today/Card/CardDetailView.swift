@@ -15,7 +15,7 @@ struct CardDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                CardView(store: store, currentItem: currentItem)
+                TodayCardView(store: store, currentItem: currentItem)
                     .scaleEffect(store.isAnimationView ? 1 : 0.90)
                     .padding(.leading, 50)
                     .padding(.trailing, 50)

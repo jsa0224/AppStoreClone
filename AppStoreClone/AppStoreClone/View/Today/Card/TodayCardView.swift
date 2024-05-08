@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct CardView: View {
+struct TodayCardView: View {
     @Bindable var store: StoreOf<Today>
     @State var currentItem: AppItem?
     @Namespace var animation
@@ -57,7 +57,7 @@ struct ScaledButtonStyle: ButtonStyle {
 }
 
 #Preview {
-    CardView(store: Store(initialState: Today.State()) {
+    TodayCardView(store: Store(initialState: Today.State()) {
         Today()
             ._printChanges()
     }, currentItem: AppItem(name: "고양이 스낵바",
