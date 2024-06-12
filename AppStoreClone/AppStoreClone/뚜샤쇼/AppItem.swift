@@ -80,3 +80,39 @@ var appGamesCardItems: [AppItem] = [
             description: "너랑 나랑 만드는 달콤한 나의 집!",
             fullDescription: "")
 ]
+
+var appGamesListFirstItems: [AppItem] = [
+    AppItem(name: "놀러와 마이홈",
+            icon: Image("놀러와 마이홈 로고"),
+            trunail: Image("놀러와 마이홈 이미지"),
+            description: "너랑 나랑 만드는 달콤한 나의 집!",
+            fullDescription: ""),
+     AppItem(name: "헬로키티 스윗파티",
+             icon: Image("헬로키티 스윗파티 로고"),
+             trunail: Image(""),
+             description: "산리오 공식 패션 꾸미기!",
+             fullDescription: ""),
+     AppItem(name: "고양이와 스프",
+             icon: Image("고양이와 스프 로고"),
+             trunail: Image(""),
+             description: "힐링 고양이 키우기 게임",
+             fullDescription: "")
+]
+
+var appGamesListSecondItems: [AppItem] = [
+    AppItem(name: "포레스트 아일랜드",
+            icon: Image("포레스트 아일랜드 로고"),
+            trunail: Image(""),
+            description: "힐링 귀여운 동물 키우기 게임",
+            fullDescription: ""),
+    AppItem(name: "모닥불 고양이 카페",
+            icon: Image("모닥불 고양이 카페 로고"),
+            trunail: Image(""),
+            description: "귀여운 고양이들과 맛있는 요리를 만들어보세요",
+            fullDescription: ""),
+    AppItem(name: "듀엣 고양이: 음악 귀여운 게임",
+            icon: Image("듀엣 고양이 로고"),
+            trunail: Image(""),
+            description: "Relaxing Kawaii Music Cat",
+            fullDescription: "")
+]

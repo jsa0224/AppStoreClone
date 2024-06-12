@@ -21,7 +21,10 @@ struct ContentView: View {
                     Text("Today")
                 }
 
-            Text("Games Tab")
+            GamesView(store: Store(initialState: Games.State()) {
+                Games()
+                    ._printChanges()
+            })
                 .tabItem {
                     Image("games")
                         .renderingMode(.template)

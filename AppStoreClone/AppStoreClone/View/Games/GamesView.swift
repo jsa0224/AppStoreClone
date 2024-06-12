@@ -15,7 +15,8 @@ struct Games {
         var showDetailView: Bool = false
         var isAnimationView: Bool = false
         var appCardItem: [AppItem] = appGamesCardItems
-        var appListItem: [AppItem] = appListItems
+        var appListFirstItem: [AppItem] = appGamesListFirstItems
+        var appListSecondItem: [AppItem] = appGamesListSecondItems
     }
 
     enum Action {
@@ -52,28 +53,43 @@ struct GamesView: View {
     @Bindable var store: StoreOf<Games>
 
     var body: some View {
-        HStack(alignment: .bottom) {
-            Text("Games")
-                .font(.largeTitle.bold())
+        ScrollView(.vertical, showsIndicators: false) {
+            HStack(alignment: .bottom) {
+                Text("게임")
+                    .font(.largeTitle.bold())
 
-            Spacer()
+                Spacer()
 
-            UserProfileImage(profileImage: Image("유저 프로필"))
-        }
-        .padding()
+                UserProfileImage(profileImage: Image("유저 프로필"))
+            }
+            .padding()
 
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 10) {
-                ForEach(store.appCardItem) { item in
-                    Button {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(store.appCardItem) { item in
+                        Button {
 
-                    } label: {
-                        GameCardView(store: store, currentItem: item)
-                            .padding([.leading], 20)
-                            .padding([.trailing], 20)
+                        } label: {
+                            GameCardView(store: store, currentItem: item)
+                                .padding([.leading], 20)
+                                .padding([.trailing], 20)
+                        }
                     }
                 }
             }
+            .padding([.bottom])
+
+            Divider()
+
+            GameListView(title: "에디터도 플레이 중", description: "요즘 우리가 푹 빠진 게임들", appFirstItems: appGamesListFirstItems, appSecondItems: appGamesListSecondItems)
+                .frame(width: 400, height: 300)
+                .padding([.top])
+
+            Divider()
+
+            GameListView(title: "꼭 해봐야 할 게임", description: "", appFirstItems: appGamesListFirstItems, appSecondItems: appGamesListSecondItems)
+                .frame(width: 400, height: 300)
+                .padding([.top])
         }
     }
 }

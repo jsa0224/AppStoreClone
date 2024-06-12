@@ -75,8 +75,8 @@ struct TodayView: View {
                         .clipShape(Circle())
                 })
                 .padding(.horizontal)
-                .padding([.leading], 30)
-                .padding([.trailing], 30)
+                .padding([.leading], 20)
+                .padding([.trailing], 20)
                 .opacity(store.isAnimationView ? 0 : 1)
             })
 
