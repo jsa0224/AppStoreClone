@@ -52,6 +52,16 @@ struct GamesView: View {
     @Bindable var store: StoreOf<Games>
 
     var body: some View {
+        HStack(alignment: .bottom) {
+            Text("Games")
+                .font(.largeTitle.bold())
+
+            Spacer()
+
+            UserProfileImage(profileImage: Image("유저 프로필"))
+        }
+        .padding()
+
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 10) {
                 ForEach(store.appCardItem) { item in

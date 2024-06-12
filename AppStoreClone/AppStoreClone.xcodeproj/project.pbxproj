@@ -23,6 +23,7 @@
 		AE43C4622BE2657100B1FAD2 /* TodayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43C4612BE2657100B1FAD2 /* TodayListView.swift */; };
 		AE72D4312BBFC9EB008B0FCB /* AppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72D4302BBFC9EB008B0FCB /* AppItem.swift */; };
 		AE72D4332BBFDA69008B0FCB /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72D4322BBFDA69008B0FCB /* CardDetailView.swift */; };
+		AEAC6D202BEDE8E6005667F9 /* UserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC6D1F2BEDE8E6005667F9 /* UserProfileImage.swift */; };
 		AED6A7002BEBACFD00510619 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED6A6FF2BEBACFD00510619 /* GameCardView.swift */; };
 		AED6A7022BEBAE5700510619 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED6A7012BEBAE5700510619 /* GamesView.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		AE43C4612BE2657100B1FAD2 /* TodayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayListView.swift; sourceTree = "<group>"; };
 		AE72D4302BBFC9EB008B0FCB /* AppItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppItem.swift; sourceTree = "<group>"; };
 		AE72D4322BBFDA69008B0FCB /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		AEAC6D1F2BEDE8E6005667F9 /* UserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImage.swift; sourceTree = "<group>"; };
 		AED6A6FF2BEBACFD00510619 /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 		AED6A7012BEBAE5700510619 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 			children = (
 				AE2662FB2BB3F537002B82A0 /* AppView.swift */,
 				AE2662FD2BB3FB20002B82A0 /* RoundedCorner.swift */,
+				AEAC6D1F2BEDE8E6005667F9 /* UserProfileImage.swift */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				AE2662FE2BB3FB20002B82A0 /* RoundedCorner.swift in Sources */,
 				AED6A7022BEBAE5700510619 /* GamesView.swift in Sources */,
 				AED6A7002BEBACFD00510619 /* GameCardView.swift in Sources */,
+				AEAC6D202BEDE8E6005667F9 /* UserProfileImage.swift in Sources */,
 				AE72D4312BBFC9EB008B0FCB /* AppItem.swift in Sources */,
 				AE2662DB2BA96326002B82A0 /* ContentView.swift in Sources */,
 				AE260A5C2BDB7C3600481DFD /* GifImage.swift in Sources */,
