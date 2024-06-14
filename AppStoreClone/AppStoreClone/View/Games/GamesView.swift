@@ -71,23 +71,27 @@ struct GamesView: View {
 
                         } label: {
                             GameCardView(store: store, currentItem: item)
-                                .padding([.leading], 20)
-                                .padding([.trailing], 20)
                         }
                     }
                 }
+                .scrollTargetLayout()
             }
-            .padding([.bottom])
+            .contentMargins(25, for: .scrollContent)
+            .scrollTargetBehavior(.viewAligned)
 
             Divider()
+                .padding([.leading], 28)
+                .padding([.trailing], 28)
 
             GameListView(title: "에디터도 플레이 중", description: "요즘 우리가 푹 빠진 게임들", appFirstItems: appGamesListFirstItems, appSecondItems: appGamesListSecondItems)
                 .frame(width: 400, height: 300)
                 .padding([.top])
 
             Divider()
+                .padding([.leading], 28)
+                .padding([.trailing], 28)
 
-            GameListView(title: "꼭 해봐야 할 게임", description: "", appFirstItems: appGamesListFirstItems, appSecondItems: appGamesListSecondItems)
+            GameListView(title: "꼭 해봐야 할 게임", description: nil, appFirstItems: appGamesListFirstItems, appSecondItems: appGamesListSecondItems)
                 .frame(width: 400, height: 300)
                 .padding([.top])
         }

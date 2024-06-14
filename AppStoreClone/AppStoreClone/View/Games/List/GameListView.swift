@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GameListView: View {
     @State var title: String
-    @State var description: String
+    @State var description: String?
     @State var appFirstItems: [AppItem]
     @State var appSecondItems: [AppItem]
 
@@ -19,9 +19,11 @@ struct GameListView: View {
                 VStack(alignment: .leading) {
                     Text(title)
                         .font(.title2.bold())
-                    Text(description)
-                        .font(.subheadline)
-                        .foregroundStyle(.gray)
+                    if description != nil {
+                        Text(description ?? "")
+                            .font(.subheadline)
+                            .foregroundStyle(.gray)
+                    }
                 }
                 .padding([.leading], 30)
 
@@ -45,6 +47,7 @@ struct GameListView: View {
                     }
                     .listStyle(.inset)
                     .frame(width: 400)
+                    .scrollDisabled(true)
 
                     List {
                         ForEach(appSecondItems) { item in
@@ -54,6 +57,7 @@ struct GameListView: View {
                     }
                     .listStyle(.inset)
                     .frame(width: 400)
+                    .scrollDisabled(true)
                 }
             }
         }
