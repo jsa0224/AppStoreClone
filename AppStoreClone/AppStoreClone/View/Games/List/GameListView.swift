@@ -14,7 +14,7 @@ struct GameListView: View {
     @State var appSecondItems: [AppItem]
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             HStack {
                 VStack(alignment: .leading) {
                     Text(title)

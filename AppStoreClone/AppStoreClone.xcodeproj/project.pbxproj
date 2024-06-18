@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE01D71A2C193FFA0076E51F /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01D7192C193FFA0076E51F /* GameListView.swift */; };
+		AE01D71D2C2161610076E51F /* ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01D71C2C2161610076E51F /* ShortcutsView.swift */; };
 		AE260A5C2BDB7C3600481DFD /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE260A5B2BDB7C3600481DFD /* GifImage.swift */; };
 		AE260A5E2BDB7DB600481DFD /* 쿠키런 광고 영상.gif in Resources */ = {isa = PBXBuildFile; fileRef = AE260A5D2BDB7DB600481DFD /* 쿠키런 광고 영상.gif */; };
 		AE260A622BDB7E8C00481DFD /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE260A612BDB7E8C00481DFD /* AdView.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		AE01D7192C193FFA0076E51F /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
+		AE01D71C2C2161610076E51F /* ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsView.swift; sourceTree = "<group>"; };
 		AE260A5B2BDB7C3600481DFD /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		AE260A5D2BDB7DB600481DFD /* 쿠키런 광고 영상.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "쿠키런 광고 영상.gif"; sourceTree = "<group>"; };
 		AE260A612BDB7E8C00481DFD /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 				AE01D7192C193FFA0076E51F /* GameListView.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		AE01D71B2C2161440076E51F /*  Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				AE01D71C2C2161610076E51F /* ShortcutsView.swift */,
+			);
+			path = " Shortcuts";
 			sourceTree = "<group>";
 		};
 		AE260A5F2BDB7E4100481DFD /* Card */ = {
@@ -191,6 +201,7 @@
 				AED6A7012BEBAE5700510619 /* GamesView.swift */,
 				AED6A7032BEBAE5E00510619 /* Card */,
 				AE01D7162C193FBA0076E51F /* List */,
+				AE01D71B2C2161440076E51F /*  Shortcuts */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -291,6 +302,7 @@
 				AE2663012BB3FC27002B82A0 /* View.swift in Sources */,
 				AE2662EF2BAADCCF002B82A0 /* TodayView.swift in Sources */,
 				AE2662F92BB3E895002B82A0 /* TodayCardView.swift in Sources */,
+				AE01D71D2C2161610076E51F /* ShortcutsView.swift in Sources */,
 				AE43C4622BE2657100B1FAD2 /* TodayListView.swift in Sources */,
 				AE2662FC2BB3F537002B82A0 /* AppView.swift in Sources */,
 				AE01D71A2C193FFA0076E51F /* GameListView.swift in Sources */,

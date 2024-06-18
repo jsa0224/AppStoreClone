@@ -68,11 +68,7 @@ struct TodayView: View {
                     })
                     .frame(maxWidth: .infinity, alignment: .leading)
 
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
+                    UserProfileImage(profileImage: Image("유저 프로필"))
                 })
                 .padding(.horizontal)
                 .padding([.leading], 20)

@@ -84,7 +84,7 @@ struct GamesView: View {
                 .padding([.trailing], 28)
 
             GameListView(title: "에디터도 플레이 중", description: "요즘 우리가 푹 빠진 게임들", appFirstItems: appGamesListFirstItems, appSecondItems: appGamesListSecondItems)
-                .frame(width: 400, height: 300)
+                .frame(width: 400, height: 280)
                 .padding([.top])
 
             Divider()
@@ -92,8 +92,17 @@ struct GamesView: View {
                 .padding([.trailing], 28)
 
             GameListView(title: "꼭 해봐야 할 게임", description: nil, appFirstItems: appGamesListFirstItems, appSecondItems: appGamesListSecondItems)
-                .frame(width: 400, height: 300)
+                .frame(width: 400, height: 260)
                 .padding([.top])
+
+            Divider()
+                .padding([.leading], 28)
+                .padding([.trailing], 28)
+
+            ShortcutsView()
+                .frame(width: 370, height: 500)
+                .padding([.top])
+                .padding([.bottom])
         }
     }
 }
