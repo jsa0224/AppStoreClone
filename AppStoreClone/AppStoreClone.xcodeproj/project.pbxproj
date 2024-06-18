@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE01D71A2C193FFA0076E51F /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01D7192C193FFA0076E51F /* GameListView.swift */; };
 		AE01D71D2C2161610076E51F /* ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01D71C2C2161610076E51F /* ShortcutsView.swift */; };
+		AE01D71F2C21B4280076E51F /* GameCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01D71E2C21B4280076E51F /* GameCategoryItem.swift */; };
 		AE260A5C2BDB7C3600481DFD /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE260A5B2BDB7C3600481DFD /* GifImage.swift */; };
 		AE260A5E2BDB7DB600481DFD /* 쿠키런 광고 영상.gif in Resources */ = {isa = PBXBuildFile; fileRef = AE260A5D2BDB7DB600481DFD /* 쿠키런 광고 영상.gif */; };
 		AE260A622BDB7E8C00481DFD /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE260A612BDB7E8C00481DFD /* AdView.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		AE01D7192C193FFA0076E51F /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
 		AE01D71C2C2161610076E51F /* ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsView.swift; sourceTree = "<group>"; };
+		AE01D71E2C21B4280076E51F /* GameCategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCategoryItem.swift; sourceTree = "<group>"; };
 		AE260A5B2BDB7C3600481DFD /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		AE260A5D2BDB7DB600481DFD /* 쿠키런 광고 영상.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "쿠키런 광고 영상.gif"; sourceTree = "<group>"; };
 		AE260A612BDB7E8C00481DFD /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				AE72D4302BBFC9EB008B0FCB /* AppItem.swift */,
+				AE01D71E2C21B4280076E51F /* GameCategoryItem.swift */,
 			);
 			name = Entity;
 			path = "뚜샤쇼";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE01D71F2C21B4280076E51F /* GameCategoryItem.swift in Sources */,
 				AE72D4332BBFDA69008B0FCB /* CardDetailView.swift in Sources */,
 				AE2662FE2BB3FB20002B82A0 /* RoundedCorner.swift in Sources */,
 				AED6A7022BEBAE5700510619 /* GamesView.swift in Sources */,
