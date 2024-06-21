@@ -41,6 +41,7 @@
 > 해결 방법: `ZStack` 안에 이미지와 `VStack`을 넣어 레이아웃을 설정할 수 있게끔 수정하였다. 
 
 ![image](https://github.com/jsa0224/AppStoreClone/assets/94514250/36d9133a-9de6-4e38-a57c-debd1bb13c1a) 
+
 ```swift 
 struct CardView: View {
     var body: some View {
@@ -77,5 +78,5 @@ struct CardView: View {
         }
     }
 }
-```|
+```
 
