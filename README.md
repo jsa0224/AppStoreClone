@@ -33,14 +33,12 @@
 <br>
 
 ## 💡 트러블 슈팅
-### SwiftUI 레이아웃 문제 - TodayView
+### TodayView - SwiftUI 레이아웃 문제 
 > 문제점: `.background`로 이미지를 넣다보니 이미지와 VStack의 레이아웃을 설정하기가 힘들었다.
 
 <Img src = "https://github.com/jsa0224/AppStoreClone/assets/94514250/5122ea27-088c-4091-b343-9dd76c0f85a7" height="500"> <Img src = "https://github.com/jsa0224/AppStoreClone/assets/94514250/36d9133a-9de6-4e38-a57c-debd1bb13c1a" height="500">
 
 > 해결 방법: `ZStack` 안에 이미지와 `VStack`을 넣어 레이아웃을 설정할 수 있게끔 수정하였다. 
-
-
 
 <details>
 <summary>상세 코드</summary>
@@ -131,10 +129,61 @@ struct CardView: View {
 </div>
 </details>
 
-### SwiftUI 레이아웃 문제 - GamesView
+---
+
+### TodayView - 애니메이션 문제
+
+> 문제점: 투데이 뷰의 애니메이션 기능을 구현하면서 적절한 모션을 적용하는 데 고민이 되었다. 
+
+1. Modal 방식으로 구현
+   기존의 modal 뷰는 부모 계층의 뷰가 사라지지 않고 화면에 남아있게 되기 때문에, 애니메이션을 적용해도 부모 뷰와 겹쳐 화면에 나타나는 문제점이 발생했다.
+
+2. Button / Overlay 방식으로 구현
+   부모 뷰가 화면에 남아있는 현상은 없어졌지만, 애니메이션 구현 방식이 기존 앱스토어 화면과 다르다는 문제점은 해결되지 않았다.
+
+<Img src = "https://github.com/jsa0224/AppStoreClone/assets/94514250/13cdb21b-9b5e-4987-8a6d-2236851ff3e7" height="500">
+
+> 해결 방법: `.interactiveSpring`과 `.matchedGeometryEffect`으로 해결되었다.
+
+<details>
+<summary>상세 코드</summary>
+<div markdown="1">
+
+```swift
+Button {
+    withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+        currentItem = store.appCardItem[1]
+        store.send(.cardViewTapped)
+    }
+} label: {
+    TodayCardView(store: store, currentItem: store.appCardItem[1])
+        .multilineTextAlignment(.leading)
+        .padding([.leading], 30)
+        .padding([.trailing], 30)
+    }
+    .buttonStyle(ScaledButtonStyle())
+    .opacity(store.showDetailView ? (currentItem?.id == store.appCardItem[1].id ? 1 : 0) : 1)
+    .padding()
+}
+.padding(.vertical)
+.background(.thickMaterial)
+.overlay {
+    if store.showDetailView {
+        CardDetailView(store: store, currentItem: currentItem)
+            .edgesIgnoringSafeArea(.top)
+    }
+}
+```
+
+</div>
+</details>
+
+---
+
+### GamesView - SwiftUI 레이아웃 문제
 ![KakaoTalk_Video_2024-07-02-14-38-36-ezgif com-speed](https://github.com/jsa0224/AppStoreClone/assets/94514250/53d48eeb-5572-4bd4-a88a-f89cc2c2ca6a)
 
-> 문제점: 기존 앱스토어 화면을 보면 게임 뷰의 카드 형태의 스크롤뷰가 스크롤 시 다음 뷰로 넘어갈 때, 스크롤이 멈추게 되는데 이 구현 방법에 대한 고민을 했다.
+> 문제점: 기존 앱스토어 게임 탭 화면을 보면 카드 형태의 스크롤뷰가 스크롤 시 다음 뷰로 넘어갈 때, 스크롤이 멈추게 되는데 이 구현 방법에 대한 고민을 했다.
 
 <Img src = "https://github.com/jsa0224/AppStoreClone/assets/94514250/6cea4dd2-c5cb-49e8-ac55-82c12898323a" height="500"> <Img src = "https://github.com/jsa0224/AppStoreClone/assets/94514250/a9d0d43c-4aa0-4e98-a2d2-90cd8cc572ce" height="500">
 
