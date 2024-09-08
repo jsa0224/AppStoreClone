@@ -27,6 +27,9 @@
 		AE72D4312BBFC9EB008B0FCB /* AppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72D4302BBFC9EB008B0FCB /* AppItem.swift */; };
 		AE72D4332BBFDA69008B0FCB /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72D4322BBFDA69008B0FCB /* CardDetailView.swift */; };
 		AEAC6D202BEDE8E6005667F9 /* UserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC6D1F2BEDE8E6005667F9 /* UserProfileImage.swift */; };
+		AEC856982C5A08C600BC3782 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC856972C5A08C600BC3782 /* SearchView.swift */; };
+		AEC8569A2C5A0BA900BC3782 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC856992C5A0BA900BC3782 /* SearchListView.swift */; };
+		AEC8569C2C5A0D5000BC3782 /* SearchGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC8569B2C5A0D5000BC3782 /* SearchGridView.swift */; };
 		AED6A7002BEBACFD00510619 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED6A6FF2BEBACFD00510619 /* GameCardView.swift */; };
 		AED6A7022BEBAE5700510619 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED6A7012BEBAE5700510619 /* GamesView.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +55,9 @@
 		AE72D4302BBFC9EB008B0FCB /* AppItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppItem.swift; sourceTree = "<group>"; };
 		AE72D4322BBFDA69008B0FCB /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		AEAC6D1F2BEDE8E6005667F9 /* UserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImage.swift; sourceTree = "<group>"; };
+		AEC856972C5A08C600BC3782 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		AEC856992C5A0BA900BC3782 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		AEC8569B2C5A0D5000BC3782 /* SearchGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGridView.swift; sourceTree = "<group>"; };
 		AED6A6FF2BEBACFD00510619 /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 		AED6A7012BEBAE5700510619 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +161,7 @@
 				AE2662FA2BB3F522002B82A0 /* CommonView */,
 				AE2662ED2BAADC9E002B82A0 /* Today */,
 				AED6A6FE2BEBACB500510619 /* Games */,
+				AEC856962C5A089F00BC3782 /* Search */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +203,16 @@
 				AE43C4612BE2657100B1FAD2 /* TodayListView.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		AEC856962C5A089F00BC3782 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AEC856972C5A08C600BC3782 /* SearchView.swift */,
+				AEC856992C5A0BA900BC3782 /* SearchListView.swift */,
+				AEC8569B2C5A0D5000BC3782 /* SearchGridView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		AED6A6FE2BEBACB500510619 /* Games */ = {
@@ -295,8 +312,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE01D71F2C21B4280076E51F /* GameCategoryItem.swift in Sources */,
+				AEC856982C5A08C600BC3782 /* SearchView.swift in Sources */,
 				AE72D4332BBFDA69008B0FCB /* CardDetailView.swift in Sources */,
 				AE2662FE2BB3FB20002B82A0 /* RoundedCorner.swift in Sources */,
+				AEC8569A2C5A0BA900BC3782 /* SearchListView.swift in Sources */,
 				AED6A7022BEBAE5700510619 /* GamesView.swift in Sources */,
 				AED6A7002BEBACFD00510619 /* GameCardView.swift in Sources */,
 				AEAC6D202BEDE8E6005667F9 /* UserProfileImage.swift in Sources */,
@@ -309,6 +328,7 @@
 				AE01D71D2C2161610076E51F /* ShortcutsView.swift in Sources */,
 				AE43C4622BE2657100B1FAD2 /* TodayListView.swift in Sources */,
 				AE2662FC2BB3F537002B82A0 /* AppView.swift in Sources */,
+				AEC8569C2C5A0D5000BC3782 /* SearchGridView.swift in Sources */,
 				AE01D71A2C193FFA0076E51F /* GameListView.swift in Sources */,
 				AE260A622BDB7E8C00481DFD /* AdView.swift in Sources */,
 				AE2662D92BA96326002B82A0 /* AppStoreCloneApp.swift in Sources */,
